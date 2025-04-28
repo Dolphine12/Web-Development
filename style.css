@@ -1,0 +1,278 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* base colors */
+  :root {
+    --light-bg:  #ffffff;
+    --light-txt: #212529;
+    --dark-bg:   #212529;
+    --dark-txt:  #f8f9fa;
+  }
+  
+  /* Default (light) */
+  body {
+    background: var(--light-bg);
+    color:      var(--light-txt);
+  }
+  
+  /* Toggle this on click */
+  body.dark-theme {
+    background: var(--dark-bg);
+    color:      var(--dark-txt);
+  }
+  
+  /* ONLY override your content sections, not the navbar’s bg-light */
+  body.dark-theme section.bg-light {
+    background-color: var(--dark-bg) !important;
+  }
+  
+  /* Keep the navbar-toggler-icon visible by letting Bootstrap apply its own SVG */
+  header.navbar.navbar-dark .navbar-toggler-icon {
+    filter: none;             /* ensure default white icon */
+  }
+  header.navbar.navbar-light .navbar-toggler-icon {
+    filter: invert(1);        /* invert for dark icon on light bg */
+  }
+  
+  /* Apply to sections */
+  section {
+    animation: fadeIn 1s ease forwards;
+  }
+  #hero {
+    background-image: url('img/coders.webp'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 60vh;
+    color: #fff;
+  }
+  
+  /* Button hover effect */
+  button:hover, .btn:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  
+  /* Card hover */
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+  #about .carousel-item {
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  #about h3 {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  #about p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+}
+.about-img {
+  width: 100%;
+  height: 150px;         
+  object-fit: cover;
+  border-radius: 8px;    
+}
+
+/* Custom styling for Portfolio items */
+.portfolio-item {
+  border-radius: 8px;         
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;         
+}
+/* Hover effect on portfolio items */
+.portfolio-item:hover {
+  transform: translateY(-10px); /* Slight raise effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Optional: customize buttons */
+.portfolio-item .btn-primary {
+  margin-top: 10px;
+}
+
+/* Custom styling for icons */
+.portfolio-item i {
+  color: #333; /* Change the icon color */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for icons */
+.portfolio-item:hover i {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+/* Styling for Skills Section */
+#skills {
+  background-color: #f4f4f4;  /* Light background color */
+}
+
+/* Styling for the image on the left to fully cover the section */
+.skills-description img {
+  width: 100%; /* Make the image take up the full width of the container */
+  height: 100%; /* Make the image take up the full height of the container */
+  object-fit: cover; /* This will make the image cover the container without distorting */
+  object-position: center; /* Optional: centers the image if aspect ratio does not match */
+  border-radius: 10px; /* Optional: add rounded corners if desired */
+}
+
+
+/* Styling for the progress bars and skill sections */
+.skills-list h3 {
+  margin-bottom: 20px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.progress {
+  height: 5px;
+  background-color: #e0e0e0; /* Light gray background for the progress bar */
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease; /* Smooth transition for progress bar */
+}
+
+/* Color for different skill levels */
+.progress-bar:nth-child(1) {
+  background-color: #4caf50; /* Green for high skill level */
+}
+
+.progress-bar:nth-child(2) {
+  background-color: #ff9800; /* Orange for medium skill level */
+}
+
+.progress-bar:nth-child(3) {
+  background-color: #2196f3; /* Blue for high skill level */
+}
+
+.progress-bar:nth-child(4) {
+  background-color: #9c27b0; /* Purple for high skill level */
+}
+
+/* Responsive Layout: Stacks sections on smaller screens */
+@media (max-width: 768px) {
+  #skills .row {
+    flex-direction: column-reverse;
+  }
+
+  .skills-description {
+    text-align: center;
+  }
+
+  .skills-list {
+    text-align: center;
+  }
+}
+/* Styling for the Services Section */
+/* Remove white background, add subtle bottom border instead */
+.service-card {
+  padding: 1.5rem 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Hover effect to highlight */
+.service-card:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  transform: translateY(-5px);
+}
+
+/* Service titles */
+.service-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Service description */
+.service-card p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+/* Section background */
+#services {
+  background-color: #f8f9fa;
+}
+
+/* Responsive tweak: center image on small screens */
+@media (max-width: 767px) {
+  #services .row {
+    flex-direction: column;
+  }
+  #services .col-lg-4 {
+    margin-top: 2rem;
+  }
+}
+#stats h2 {
+  color: #030303dc; 
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+#stats p {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #555;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+#success-work h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+#success-work .row {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+/* Same size for all images */
+.work-img {
+  width: 95%;
+  height: 150px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Optional: little hover zoom effect */
+.work-img:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+
+/* Icons */
+#success-work .bg-success i {
+  margin: 10px 20px;
+}
+
+
+
+
+  
+  
