@@ -1,6 +1,6 @@
 # UI Portfolio Replication
 
-> A collaborative project to replicate and enhance a provided web design demo.
+> A collaborative project aimed at replicating and enhancing the provided web design demo.
 ![Homepage Screenshot](https://github.com/user-attachments/assets/31f3b5e6-45bf-463a-9785-64c093e2256c)
 
 ---
